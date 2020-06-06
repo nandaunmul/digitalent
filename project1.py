@@ -89,8 +89,11 @@ discounted_price(total_price(counter_item(chart),fruit_price),10,minprice=100)
 def print_summary(items,fprice):
   #pass
   # MULAI KODEMU DI SINI
-  daftar=counter_item(items)
-  #daftar=sorted(daftar_awal.items())
+  daftar_awal=counter_item(items)
+  daftar_awal=sorted(daftar_awal.items())
+  daftar={}
+  for butir in daftar_awal:
+      daftar[butir[0]]=butir[1]
   for namabuah in daftar:
       print(daftar[namabuah],namabuah,":",daftar[namabuah]*fprice[namabuah])
   print("total :",total_price(counter_item(chart),fruit_price))
