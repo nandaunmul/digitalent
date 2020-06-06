@@ -41,7 +41,8 @@ def counter_item(items):
       kamus[i]=1
     else:
       kamus[i]+=1
-  print(kamus)
+  #print(kamus)
+  return kamus  
 
 # Cek output kode anda
 counter_item(['Apple','Apple','Apple','Blueberries','Blueberries','Blueberries'])
@@ -56,24 +57,43 @@ prices = [6,5,3,10,12,7,14,15,8,7,9]
 chart = ['Blueberries','Blueberries','Grapes','Apple','Apple','Apple','Blueberries','Guava','Jackfruit','Blueberries','Jackfruit']
 
 # MULAI KODEMU DI SINI
-fruit_price = None # ini kode saya dst TENTUNYA SUDAH DIKERJAKAN!
+if len(fruits)==len(prices):
+    fruit_price = {}
+    for i in range(len(fruits)):
+        fruit_price[fruits[i]]=prices[i]
 
 def total_price(dcounter,fprice):
-  pass
   # MULAI KODEMU DI SINI
-  # ini kode saya dst
+  harga=0
+  for buah, beli in dcounter.items():
+      harga+=beli*fprice[buah]
+  #print(harga)
+  return harga
+
+total_price(counter_item(chart),fruit_price)
 
 #Graded
 
 def discounted_price(total,discount,minprice=100):
-  pass
+  #pass
   # MULAI KODEMU DI SINI
-  # ini kode saya dst TENTUNYA SUDAH DIKERJAKAN!
+  if total>=minprice:
+      total-=discount*total/100
+      #print(total)
+      return total      
 
+discounted_price(total_price(counter_item(chart),fruit_price),10,minprice=100)
 
 #Graded
 
 def print_summary(items,fprice):
-  pass
+  #pass
   # MULAI KODEMU DI SINI
-  # ini kode saya dst TENTUNYA SUDAH DIKERJAKAN!
+  daftar=counter_item(items)
+  #daftar=sorted(daftar_awal.items())
+  for namabuah in daftar:
+      print(daftar[namabuah],namabuah,":",daftar[namabuah]*fprice[namabuah])
+  print("total :",total_price(counter_item(chart),fruit_price))
+  print("discount price :",discounted_price(total_price(counter_item(chart),fruit_price),10,minprice=100))
+      
+print_summary(chart,fruit_price)
