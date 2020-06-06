@@ -12,7 +12,7 @@ priority = 0
 
 
 #netacad email cth: 'abcd@gmail.com'
-email='abcd@gmail.com'
+email='nanda.arista@fkip.unmul.ac.id'
 
 # copy-paste semua #Graded cells di bawah ini
 
@@ -34,9 +34,17 @@ letter_catalog(['Apple','Avocado','Banana','Blackberries','Blueberries','Cherrie
 #Graded
 
 def counter_item(items):
-  pass
   # MULAI KODEMU DI SINI
-  # ini kode saya dst TENTUNYA SUDAH DIKERJAKAN!
+  kamus={}
+  for i in items:
+    if i not in kamus:
+      kamus[i]=1
+    else:
+      kamus[i]+=1
+  print(kamus)
+
+# Cek output kode anda
+counter_item(['Apple','Apple','Apple','Blueberries','Blueberries','Blueberries'])
 
 #Graded
 
