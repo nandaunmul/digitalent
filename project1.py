@@ -95,7 +95,7 @@ def print_summary(items,fprice):
   for butir in daftar_awal:
       daftar[butir[0]]=butir[1]
   for namabuah in daftar:
-      print(daftar[namabuah],namabuah,":",daftar[namabuah]*fprice[namabuah])
+      print(daftar[namabuah]," ",namabuah," : ",daftar[namabuah]*fprice[namabuah],"\n",sep="",end="")
   print("total :",total_price(counter_item(chart),fruit_price))
   print("discount price :",discounted_price(total_price(counter_item(chart),fruit_price),10,minprice=100))
       
